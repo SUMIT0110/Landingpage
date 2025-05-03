@@ -98,8 +98,6 @@ const Panchakarma: React.FC = () => {
                     />
                     
                     <ListGrid title="Why Choose Us for Panchakarma?" items={panchakarmaContent.whyChooseUs} />
-                    
-                    <CTA text="Ready to Experience the Benefits of Panchakarma?" buttonText="Schedule Consultation" />
                 </div>
             </div>
         </div>

@@ -113,8 +113,6 @@ const HerbalRemedies: React.FC = () => {
                     />
                     
                     <ListGrid title="Why Choose Our Herbal Remedies?" items={herbalContent.whyChooseUs} />
-                    
-                    <CTA text="Start Healing With Nature Today" buttonText="Book a Herbal Consultation" />
                 </div>
             </div>
         </div>

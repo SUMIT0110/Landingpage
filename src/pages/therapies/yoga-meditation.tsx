@@ -106,8 +106,6 @@ const YogaMeditation: React.FC = () => {
                     />
                     
                     <ListGrid title="Why Choose Our Yoga & Meditation Services?" items={yogaContent.whyChooseUs} />
-                    
-                    <CTA text="Start Your Journey Toward Balance and Peace Today" buttonText="Book Your Session" />
                 </div>
             </div>
         </div>

@@ -103,8 +103,6 @@ const AyurvedicMassage: React.FC = () => {
                     />
                     
                     <ListGrid title="Why Choose Our Ayurvedic Massage Services?" items={massageContent.whyChooseUs} />
-                    
-                    <CTA text="Book Your Ayurvedic Massage Now" buttonText="Schedule an Appointment" />
                 </div>
             </div>
         </div>

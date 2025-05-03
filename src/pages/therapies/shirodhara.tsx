@@ -100,8 +100,6 @@ const Shirodhara: React.FC = () => {
                     />
                     
                     <ListGrid title="Why Choose Us for Shirodhara?" items={shirodharaContent.whyChooseUs} />
-                    
-                    <CTA text="Begin Your Shirodhara Journey Today" buttonText="Book Your Session" />
                 </div>
             </div>
         </div>

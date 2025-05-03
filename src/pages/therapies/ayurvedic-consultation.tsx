@@ -122,8 +122,6 @@ const AyurvedicConsultation: React.FC = () => {
                     />
                     
                     <ListGrid title={therapyData.sections.whyChooseUs.title} items={therapyData.sections.whyChooseUs.items} />
-                    
-                    <CTA text="Ready to Start Your Ayurvedic Journey?" buttonText="Schedule a Consultation" />
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import ServiceCard from './ServiceCard';
-import { serviceData } from '../data/serviceData';
+import ServiceCard, { serviceData } from './ServiceCard';
 import { Leaf } from 'lucide-react';
 
 const Services: React.FC = () => {
