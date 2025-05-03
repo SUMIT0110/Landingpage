@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-6">
               <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-10 mr-2" />
-              <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda Panchakarma Center</span>
+              <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda</span>
             </div>
             <p className="mb-6 opacity-80">
               Authentic Ayurvedic treatments and Panchakarma therapies for holistic healing and wellness.
