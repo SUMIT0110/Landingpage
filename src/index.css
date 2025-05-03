@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add custom background color for beige */
+.bg-beige-50 {
+  background-color: #f8f7f2;
+}
+
+/* Add smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Improve button tap target on mobile */
+button, a {
+  @apply cursor-pointer;
+}
