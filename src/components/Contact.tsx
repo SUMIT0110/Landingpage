@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <p>info@shreesiddhivinayak.com</p>
+                  <p>contact@giganxt.com</p>
                 </div>
               </div>
 
