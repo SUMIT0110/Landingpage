@@ -2,36 +2,44 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
+// Import images
+import panchakarmaImg from '../asstes/Panchakarma.jpeg';
+import massageImg from '../asstes/massage.jpeg';
+import shirodharaImg from '../asstes/Shirodhara.jpeg';
+import herbalImg from '../asstes/herbal.jpeg';
+import consultationImg from '../asstes/Consultation.png';
+import yogaImg from '../asstes/yoga.jpeg';
+
 export const serviceData = [
   {
     title: "Panchakarma Therapy",
     description: "Our signature detoxification and rejuvenation therapy that cleanses the body of toxins and restores balance to all systems.",
-    imageUrl: "./src/asstes/Panchakarma.jpeg"
+    imageUrl: panchakarmaImg
   },
   {
     title: "Ayurvedic Massage",
     description: "Traditional therapeutic massages using herbal oils to improve circulation, relieve stress, and promote deep relaxation.",
-    imageUrl: "./src/asstes/massage.jpeg"
+    imageUrl: massageImg
   },
   {
     title: "Shirodhara",
     description: "A deeply relaxing therapy where warm herbal oil is gently poured over the forehead to calm the mind and nervous system.",
-    imageUrl: "./src/asstes/Shirodhara.jpeg"
+    imageUrl: shirodharaImg
   },
   {
     title: "Herbal Remedies",
     description: "Custom-formulated herbal medicines and supplements prepared according to traditional Ayurvedic principles.",
-    imageUrl: "./src/asstes/herbal.jpeg"
+    imageUrl: herbalImg
   },
   {
     title: "Ayurvedic Consultation",
     description: "Comprehensive health assessment and personalized treatment plans by our expert Ayurvedic physicians.",
-    imageUrl: "./src/asstes/Consultation.png"
+    imageUrl: consultationImg
   },
   {
     title: "Yoga & Meditation",
     description: "Guided sessions to complement your Ayurvedic treatments and enhance mind-body balance and wellness.",
-    imageUrl: "./src/asstes/yoga.jpeg"
+    imageUrl: yogaImg
   }
 ];
 
