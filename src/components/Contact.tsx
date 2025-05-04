@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-green-50">
+    <section id="contact" className="py-16 bg-gradient-to-b from-white via-green-50/30 to-white">
       <div className="container mx-auto px-6">
         {isMobile ? (
           // Mobile view with animations

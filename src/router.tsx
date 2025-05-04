@@ -7,7 +7,6 @@ import HerbalRemedies from './pages/therapies/herbal-remedies';
 import AyurvedicConsultation from './pages/therapies/ayurvedic-consultation';
 import OnlineConsultation from './pages/therapies/online-consultation';
 import HeroPage from './pages/hero';
-import ContactPage from './pages/contact';
 
 import PrivacyPolicy from './pages/privacy-policy';
 import TermsOfService from './pages/terms-of-service';
@@ -21,10 +20,7 @@ export const router = createBrowserRouter([
     path: '/hero',
     element: <HeroPage />,
   },
-  {
-    path: '/contact',
-    element: <ContactPage />,
-  },
+
   {
     path: '/therapies/panchakarma',
     element: <Panchakarma />,

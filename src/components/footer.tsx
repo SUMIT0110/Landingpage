@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda</span>
             </div>
             <p className="mb-6 opacity-80">
-              Authentic Ayurvedic treatments and Panchakarma therapies for holistic healing and wellness. Now offering online consultations with excellent patient feedback.
+              Authentic Ayurvedic treatments and Panchakarma therapies for holistic healing and wellness.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/share/1XFNYqJcKy/" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">
