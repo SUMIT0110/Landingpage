@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logoImage from '../asstes/logoa.png';
 
 const Footer: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the screen is mobile-sized
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
   return (
     <footer className="bg-green-800 text-white py-12">
       <div className="container mx-auto px-6">
@@ -27,17 +43,20 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><a href="#home" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Home</a></li>
-              <li><a href="#about" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">About Us</a></li>
-              <li><a href="#therapies" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Therapies</a></li>
-              <li><a href="#why-us" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Why Choose Us</a></li>
-              <li><a href="#appointment" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Book Appointment</a></li>
-              <li><a href="#contact" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Contact</a></li>
-            </ul>
-          </div>
+          {/* Quick Links - Hidden on mobile */}
+          {!isMobile && (
+            <div>
+              <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+              <ul className="space-y-3">
+                <li><a href="#home" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Home</a></li>
+                <li><a href="#about" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">About Us</a></li>
+                <li><a href="#therapies" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Therapies</a></li>
+                <li><a href="#why-us" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Why Choose Us</a></li>
+                <li><a href="#appointment" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Book Appointment</a></li>
+                <li><a href="#contact" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Contact</a></li>
+              </ul>
+            </div>
+          )}
           
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact Information</h3>
