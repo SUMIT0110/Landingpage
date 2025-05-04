@@ -46,6 +46,22 @@ const Doctors: React.FC = () => {
       }
     })
   };
+  
+  // Horizontal slide variants for desktop cards
+  const slideCardVariants = {
+    hidden: (custom: number) => ({
+      opacity: 0,
+      x: custom % 2 === 0 ? -30 : 30 // Even indices slide from left, odd from right (reduced distance)
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
 
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -129,14 +145,40 @@ const Doctors: React.FC = () => {
             </motion.p>
           </motion.div>
         ) : (
-          // Desktop view without animations
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-extrabold text-green-800 mb-4">Meet Our Experts</h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          // Desktop view with animations
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={headingVariants}
+          >
+            <motion.h2 
+              className="text-5xl font-extrabold text-green-800 mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Meet Our Experts
+            </motion.h2>
+            <motion.div 
+              className="w-24 h-1 bg-green-600 mx-auto mb-6 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            ></motion.div>
+            <motion.p 
+              className="text-gray-600 text-lg max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               Leaders in Ayurvedic medicine, committed to your holistic wellness journey.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
@@ -233,10 +275,15 @@ const Doctors: React.FC = () => {
                 </motion.div>
               </motion.div>
             ) : (
-              // Desktop view without animations
-              <div
+              // Desktop view with animations - slide from opposite directions
+              <motion.div
                 key={index}
                 className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-green-300 transition-all duration-500 border border-green-100 group"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                custom={index}
+                variants={slideCardVariants}
               >
                 <div className="flex flex-col md:flex-row">
                   <div className="relative md:w-1/3 h-80 md:h-auto overflow-hidden bg-gradient-to-br from-green-50 to-green-100">
@@ -294,7 +341,7 @@ const Doctors: React.FC = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )
           ))}
         </div>

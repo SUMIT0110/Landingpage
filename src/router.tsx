@@ -5,7 +5,7 @@ import AyurvedicMassage from './pages/therapies/ayurvedic-massage';
 import Shirodhara from './pages/therapies/shirodhara';
 import HerbalRemedies from './pages/therapies/herbal-remedies';
 import AyurvedicConsultation from './pages/therapies/ayurvedic-consultation';
-import YogaMeditation from './pages/therapies/yoga-meditation';
+import OnlineConsultation from './pages/therapies/online-consultation';
 import HeroPage from './pages/hero';
 import ContactPage from './pages/contact';
 
@@ -46,8 +46,8 @@ export const router = createBrowserRouter([
     element: <AyurvedicConsultation />,
   },
   {
-    path: '/therapies/yoga-meditation',
-    element: <YogaMeditation />,
+    path: '/therapies/online-consultation',
+    element: <OnlineConsultation />,
   },
   
   {

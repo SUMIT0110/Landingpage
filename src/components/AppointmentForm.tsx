@@ -196,7 +196,13 @@ const AppointmentForm: React.FC = () => {
 
   return (
     <section id="appointment" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+      <motion.div 
+        className="container mx-auto px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
         {isMobile ? (
           // Mobile view with animations
           <motion.div 
@@ -310,22 +316,41 @@ const AppointmentForm: React.FC = () => {
             </div>
           </motion.div>
         ) : (
-          // Desktop view without animations
-          <div className="max-w-2xl mx-auto bg-beige-50 rounded-lg shadow-lg overflow-hidden">
+          // Desktop view with animations
+          <motion.div 
+            className="max-w-2xl mx-auto bg-beige-50 rounded-lg shadow-lg overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={containerVariants}
+          >
             <div className="p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">Book an Appointment</h2>
-              <p className="text-center mb-8">
+              <motion.h2 
+                className="text-3xl font-bold text-green-800 mb-6 text-center"
+                variants={headingVariants}
+              >
+                Book an Appointment
+              </motion.h2>
+              <motion.p 
+                className="text-center mb-8"
+                variants={headingVariants}
+              >
                 Fill out the form below and our team will contact you to confirm your appointment.
-              </p>
+              </motion.p>
               
               {showThankYou ? (
-                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-8 rounded relative text-center">
+                <motion.div 
+                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-8 rounded relative text-center"
+                  initial="hidden"
+                  animate="visible"
+                  variants={thankYouVariants}
+                >
                   <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
                   <p>Your appointment request has been received. We will contact you shortly to confirm.</p>
-                </div>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
+                  <motion.div variants={formItemVariants}>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                     <input
                       type="text"
@@ -337,9 +362,9 @@ const AppointmentForm: React.FC = () => {
                       placeholder="Enter your full name"
                       required
                     />
-                  </div>
+                  </motion.div>
                   
-                  <div>
+                  <motion.div variants={formItemVariants}>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                     <input
                       type="tel"
@@ -351,10 +376,10 @@ const AppointmentForm: React.FC = () => {
                       placeholder="Enter your phone number"
                       required
                     />
-                  </div>
+                  </motion.div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
+                    <motion.div variants={formItemVariants}>
                       <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
                       <input
                         type="date"
@@ -367,9 +392,9 @@ const AppointmentForm: React.FC = () => {
                       />
                       {dateError && <p className="text-red-500 text-xs mt-1">{dateError}</p>}
                       <p className="text-xs text-gray-500 mt-1">Monday-Saturday only (We're closed on Sundays)</p>
-                    </div>
+                    </motion.div>
                     
-                    <div>
+                    <motion.div variants={formItemVariants}>
                       <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-1">Preferred Time</label>
                       <input
                         type="time"
@@ -382,23 +407,27 @@ const AppointmentForm: React.FC = () => {
                       />
                       {timeError && <p className="text-red-500 text-xs mt-1">{timeError}</p>}
                       <p className="text-xs text-gray-500 mt-1">9:00 AM - 9:00 PM</p>
-                    </div>
+                    </motion.div>
                   </div>
                   
-                  <div className="text-center">
-                    <button
+                  <motion.div 
+                    className="text-center"
+                    variants={buttonVariants}
+                  >
+                    <motion.button
                       type="submit"
-                      className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition-all duration-300 text-lg font-medium"
+                      className="bg-green-600 text-white px-8 py-3 rounded-lg shadow-md transition-all duration-300 text-lg font-medium"
+                      whileTap="tap"
                     >
                       Book My Appointment
-                    </button>
-                  </div>
+                    </motion.button>
+                  </motion.div>
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

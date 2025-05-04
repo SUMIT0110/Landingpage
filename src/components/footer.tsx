@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logoImage from '../asstes/logoa.png';
+import logoImage from '../asstes/footerlogo.png';
 
 const Footer: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,11 +24,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center mb-6">
-              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-10 mr-2" />
+              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-16 mr-3" />
               <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda</span>
             </div>
             <p className="mb-6 opacity-80">
-              Authentic Ayurvedic treatments and Panchakarma therapies for holistic healing and wellness.
+              Authentic Ayurvedic treatments and Panchakarma therapies for holistic healing and wellness. Now offering online consultations with excellent patient feedback.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/share/1XFNYqJcKy/" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer">
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <i className="fas fa-envelope mt-1 mr-3"></i>
-                <span>info@shreesiddhivinayak.com</span>
+                <span>dr.bhairavkulkarni@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <i className="fas fa-clock mt-1 mr-3"></i>

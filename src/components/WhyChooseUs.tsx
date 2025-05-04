@@ -94,17 +94,37 @@ const WhyChooseUs: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Experience holistic healing with our authentic Ayurvedic treatments, tailored by experts who truly care about your wellbeing.
+              Experience holistic healing with our authentic Ayurvedic treatments, tailored by experts who truly care about your wellbeing. We now offer online consultations that have received excellent feedback from patients worldwide.
             </motion.p>
           </motion.div>
         ) : (
-          // Desktop view without animations
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-800 mb-4">Why Choose Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              Experience holistic healing with our authentic Ayurvedic treatments, tailored by experts who truly care about your wellbeing.
-            </p>
-          </div>
+          // Desktop view with animations
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={headingVariants}
+          >
+            <motion.h2 
+              className="text-4xl font-bold text-green-800 mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Why Choose Us
+            </motion.h2>
+            <motion.p 
+              className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Experience holistic healing with our authentic Ayurvedic treatments, tailored by experts who truly care about your wellbeing. We now offer online consultations that have received excellent feedback from patients worldwide.
+            </motion.p>
+          </motion.div>
         )}
 
         {/* Feature Cards */}
@@ -174,45 +194,78 @@ const WhyChooseUs: React.FC = () => {
                 </motion.div>
                 <h3 className="text-xl font-semibold text-center text-green-800 mb-4">Personalized Care</h3>
                 <p className="text-center text-gray-600">
-                  Each healing plan is customized to suit your individual body type, lifestyle, and wellness goals.
+                  Each healing plan is customized to suit your individual body type, lifestyle, and wellness goals. Our online consultations provide the same personalized attention with the convenience of remote access.
                 </p>
               </motion.div>
             </>
           ) : (
-            // Desktop view without animations
+            // Desktop view with animations
             <>
               {/* Card 1 */}
-              <div className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500">
-                <div className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition">
+              <motion.div 
+                className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                custom={0}
+                variants={cardVariants}
+              >
+                <motion.div 
+                  className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition"
+                  variants={iconVariants}
+                  whileHover="hover"
+                >
                   <UserRound className="text-green-700 group-hover:text-white" size={28} />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-center text-green-800 mb-4">Experienced Doctors</h3>
                 <p className="text-center text-gray-600">
                   Our senior Ayurvedic practitioners bring decades of deep clinical experience and compassion to every consultation.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Card 2 */}
-              <div className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500">
-                <div className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition">
+              <motion.div 
+                className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                custom={1}
+                variants={cardVariants}
+              >
+                <motion.div 
+                  className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition"
+                  variants={iconVariants}
+                  whileHover="hover"
+                >
                   <Leaf className="text-green-700 group-hover:text-white" size={28} />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-center text-green-800 mb-4">Authentic Treatments</h3>
                 <p className="text-center text-gray-600">
                   Every therapy follows true classical Ayurveda using organic herbs, ensuring purity and lasting wellness.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Card 3 */}
-              <div className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500">
-                <div className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition">
+              <motion.div 
+                className="group relative bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border hover:shadow-2xl transition duration-500"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                custom={2}
+                variants={cardVariants}
+              >
+                <motion.div 
+                  className="flex items-center justify-center w-16 h-16 mb-6 bg-green-100 rounded-full mx-auto group-hover:bg-green-600 transition"
+                  variants={iconVariants}
+                  whileHover="hover"
+                >
                   <Heart className="text-green-700 group-hover:text-white" size={28} />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold text-center text-green-800 mb-4">Personalized Care</h3>
                 <p className="text-center text-gray-600">
-                  Each healing plan is customized to suit your individual body type, lifestyle, and wellness goals.
+                  Each healing plan is customized to suit your individual body type, lifestyle, and wellness goals. Our online consultations provide the same personalized attention with the convenience of remote access.
                 </p>
-              </div>
+              </motion.div>
             </>
           )}
         </div>

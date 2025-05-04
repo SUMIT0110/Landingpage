@@ -54,11 +54,6 @@ const Hero: React.FC = () => {
         type: "spring",
         stiffness: 200
       }
-    },
-    hover: {
-      scale: 1.1,
-      backgroundColor: "#166534",
-      transition: { duration: 0.3 }
     }
   };
 
@@ -102,7 +97,6 @@ const Hero: React.FC = () => {
               href="#appointment"
               initial="hidden"
               animate="visible"
-              whileHover="hover"
               variants={buttonVariants}
               className="inline-block"
             >
@@ -112,19 +106,37 @@ const Hero: React.FC = () => {
             </motion.a>
           </>
         ) : (
-          // Desktop view without animations
+          // Desktop view with animations
           <>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <motion.h1 
+              className="text-5xl md:text-6xl font-bold text-white mb-6"
+              initial="hidden"
+              animate="visible"
+              variants={titleVariants}
+            >
               Shree Siddhivinayak Ayurveda Panchakarma Center
-            </h1>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl text-white mb-8 max-w-2xl mx-auto"
+              initial="hidden"
+              animate="visible"
+              variants={descriptionVariants}
+            >
               Ayurveda is an ancient healing science that nurtures body, mind, and spirit, promoting balance, vitality, and lifelong wellness.
-            </p>
-            <a href="#appointment">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full transition transform hover:scale-105 focus:outline-none">
+            </motion.p>
+            
+            <motion.a 
+              href="#appointment"
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
+              className="inline-block"
+            >
+              <button className="bg-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full focus:outline-none">
                 Book My Appointment
               </button>
-            </a>
+            </motion.a>
           </>
         )}
       </div>

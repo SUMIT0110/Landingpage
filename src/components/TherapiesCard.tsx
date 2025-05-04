@@ -8,7 +8,7 @@ import massageImg from '../asstes/massage.jpeg';
 import shirodharaImg from '../asstes/Shirodhara.jpeg';
 import herbalImg from '../asstes/herbal.jpeg';
 import consultationImg from '../asstes/Consultation.png';
-import yogaImg from '../asstes/yoga.jpeg';
+import onlineConsultationImg from '../asstes/Online_consultation.png';
 
 export const serviceData = [
   {
@@ -37,9 +37,9 @@ export const serviceData = [
     imageUrl: consultationImg
   },
   {
-    title: "Yoga & Meditation",
-    description: "Guided sessions to complement your Ayurvedic treatments and enhance mind-body balance and wellness.",
-    imageUrl: yogaImg
+    title: "Online Consultation",
+    description: "Experience authentic Ayurvedic consultations from the comfort of your home with our highly-rated online consultation services.",
+    imageUrl: onlineConsultationImg
   }
 ];
 
@@ -64,7 +64,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, imageUrl 
     else if (title === "Shirodhara") route = '/therapies/shirodhara';
     else if (title === "Herbal Remedies") route = '/therapies/herbal-remedies';
     else if (title === "Ayurvedic Consultation") route = '/therapies/ayurvedic-consultation';
-    else if (title === "Yoga & Meditation") route = '/therapies/yoga-meditation';
+    else if (title === "Online Consultation") route = '/therapies/online-consultation';
     
     navigate(route);
   };
