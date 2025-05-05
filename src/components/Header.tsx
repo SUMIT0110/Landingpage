@@ -172,7 +172,13 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#therapies"
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('therapies');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#therapies' ? 'text-orange-500' : ''}`}
               >
                 Therapies
@@ -189,7 +195,13 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#why-us"
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('why-us');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#why-us' ? 'text-orange-500' : ''}`}
               >
                 Why Choose Us
@@ -197,7 +209,13 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#appointment"
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('appointment');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#appointment' ? 'text-orange-500' : ''}`}
               >
                 Appointment
@@ -205,7 +223,13 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#about"
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('about');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#about' ? 'text-orange-500' : ''}`}
               >
                 About
@@ -213,7 +237,13 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#contact"
+                to="/"
+                onClick={() => {
+                  setTimeout(() => {
+                    const element = document.getElementById('contact');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#contact' ? 'text-orange-500' : ''}`}
               >
                 Contact
@@ -313,8 +343,14 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#therapies"
-                onClick={() => setMenuOpen(false)}
+                to="/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    const element = document.getElementById('therapies');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#therapies' ? 'text-orange-500' : ''}`}
               >
                 <span>Therapies</span>
@@ -332,32 +368,56 @@ const Header: React.FC = () => {
               </Link>
               
               <Link
-                to="/#why-us"
-                onClick={() => setMenuOpen(false)}
+                to="/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    const element = document.getElementById('why-us');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#why-us' ? 'text-orange-500' : ''}`}
               >
                 <span>Why Choose Us</span>
               </Link>
               
               <Link
-                to="/#appointment"
-                onClick={() => setMenuOpen(false)}
+                to="/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    const element = document.getElementById('appointment');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#appointment' ? 'text-orange-500' : ''}`}
               >
                 <span>Appointment</span>
               </Link>
               
               <Link
-                to="/#about"
-                onClick={() => setMenuOpen(false)}
+                to="/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    const element = document.getElementById('about');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#about' ? 'text-orange-500' : ''}`}
               >
                 <span>About</span>
               </Link>
               
               <Link
-                to="/#contact"
-                onClick={() => setMenuOpen(false)}
+                to="/"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    const element = document.getElementById('contact');
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#contact' ? 'text-orange-500' : ''}`}
               >
                 <span>Contact</span>
