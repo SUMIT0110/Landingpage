@@ -5,6 +5,7 @@ import logoImage from '../asstes/logo.png';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const navRef = useRef<HTMLDivElement>(null);
@@ -24,6 +25,88 @@ const Header: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [menuOpen]);
+  
+  // Set up intersection observer to track which section is in view
+  useEffect(() => {
+    if (!isHomePage) return;
+    
+    // Set home as default active section when page loads
+    if (activeSection === '') {
+      setActiveSection('home');
+    }
+    
+    // Define all section IDs to observe, including home
+    const sectionIds = ['home', 'therapies', 'why-us', 'appointment', 'about', 'contact'];
+    
+    // Track the last visible sections to handle edge cases
+    let visibleSections: string[] = [];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-5% 0px -5% 0px', // Adjusted for better detection
+      threshold: [0.1, 0.2, 0.3] // Multiple thresholds for better accuracy
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // First, update our list of visible sections
+      entries.forEach(entry => {
+        const sectionId = entry.target.id;
+        
+        if (entry.isIntersecting) {
+          // Add to visible sections if not already there
+          if (!visibleSections.includes(sectionId)) {
+            visibleSections.push(sectionId);
+          }
+        } else {
+          // Remove from visible sections
+          visibleSections = visibleSections.filter(id => id !== sectionId);
+        }
+      });
+      
+      // If we have visible sections, set the active section to the first one
+      // (which will be the topmost visible section)
+      if (visibleSections.length > 0) {
+        // Special handling for scrolling to top
+        if (window.scrollY < 100 && visibleSections.includes('home')) {
+          setActiveSection('home');
+        } else {
+          // For other cases, prioritize the first visible section
+          setActiveSection(visibleSections[0]);
+        }
+        console.log('Active section:', visibleSections[0]); // Debug log
+      } else if (window.scrollY < 100) {
+        // If no sections are visible and we're at the top, default to home
+        setActiveSection('home');
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    // Observe all sections
+    sectionIds.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        console.log('Observing section:', id); // Debug log
+        observer.observe(element);
+      } else {
+        console.log('Section not found:', id); // Debug log
+      }
+    });
+    
+    // Add scroll event listener for edge cases
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection('home');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isHomePage, location.pathname]);
 
   return (
     <nav ref={navRef} className="fixed w-full z-20 bg-gradient-to-r from-white/90 via-white/80 to-green-50/80 backdrop-blur-md shadow-md px-4 md:px-12 border-b border-green-100">
@@ -38,14 +121,14 @@ const Header: React.FC = () => {
           {isHomePage ? (
             // Links for home page - anchor tags for smooth scrolling
             <>
-              <a href="#" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '' ? 'text-orange-500' : ''}`}>
+              <a href="#" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === '' || activeSection === 'home' ? 'text-orange-500' : ''}`}>
                 Home
-                <span className={`block h-0.5 ${location.hash === '' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === '' || activeSection === 'home' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
               
-              <a href="#therapies" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#therapies' ? 'text-orange-500' : ''}`}>
+              <a href="#therapies" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'therapies' ? 'text-orange-500' : ''}`}>
                 Therapies
-                <span className={`block h-0.5 ${location.hash === '#therapies' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === 'therapies' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
               
               <Link 
@@ -57,24 +140,24 @@ const Header: React.FC = () => {
                 <span className={`block h-0.5 ${location.pathname === '/hero' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </Link>
               
-              <a href="#why-us" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#why-us' ? 'text-orange-500' : ''}`}>
+              <a href="#why-us" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'why-us' ? 'text-orange-500' : ''}`}>
                 Why Choose Us
-                <span className={`block h-0.5 ${location.hash === '#why-us' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === 'why-us' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
               
-              <a href="#appointment" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#appointment' ? 'text-orange-500' : ''}`}>
+              <a href="#appointment" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'appointment' ? 'text-orange-500' : ''}`}>
                 Appointment
-                <span className={`block h-0.5 ${location.hash === '#appointment' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === 'appointment' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
               
-              <a href="#about" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#about' ? 'text-orange-500' : ''}`}>
+              <a href="#about" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'about' ? 'text-orange-500' : ''}`}>
                 About
-                <span className={`block h-0.5 ${location.hash === '#about' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === 'about' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
               
-              <a href="#contact" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.hash === '#contact' ? 'text-orange-500' : ''}`}>
+              <a href="#contact" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'contact' ? 'text-orange-500' : ''}`}>
                 Contact
-                <span className={`block h-0.5 ${location.hash === '#contact' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+                <span className={`block h-0.5 ${activeSection === 'contact' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </a>
             </>
           ) : (
@@ -162,7 +245,7 @@ const Header: React.FC = () => {
               <a
                 href="#"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === '' || activeSection === 'home' ? 'text-orange-500' : ''}`}
               >
                 <span>Home</span>
               </a>
@@ -170,7 +253,7 @@ const Header: React.FC = () => {
               <a
                 href="#therapies"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#therapies' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 'therapies' ? 'text-orange-500' : ''}`}
               >
                 <span>Therapies</span>
               </a>
@@ -189,7 +272,7 @@ const Header: React.FC = () => {
               <a
                 href="#why-us"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#why-us' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 'why-us' ? 'text-orange-500' : ''}`}
               >
                 <span>Why Choose Us</span>
               </a>
@@ -197,7 +280,7 @@ const Header: React.FC = () => {
               <a
                 href="#appointment"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#appointment' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 'appointment' ? 'text-orange-500' : ''}`}
               >
                 <span>Appointment</span>
               </a>
@@ -205,7 +288,7 @@ const Header: React.FC = () => {
               <a
                 href="#about"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#about' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 'about' ? 'text-orange-500' : ''}`}
               >
                 <span>About</span>
               </a>
@@ -213,7 +296,7 @@ const Header: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.hash === '#contact' ? 'text-orange-500' : ''}`}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${activeSection === 'contact' ? 'text-orange-500' : ''}`}
               >
                 <span>Contact</span>
               </a>

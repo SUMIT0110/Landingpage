@@ -15,13 +15,27 @@ function App() {
   return (
     <div className="min-h-screen font-sans text-gray-800">
       <Header />
-      <Hero />
-      <Services />
-      <WhyChooseUs />
-      <Doctors />
-      <AppointmentForm />
-      <About />
-      <Contact />
+      <main id="home">
+        <Hero />
+      </main>
+      <section id="therapies">
+        <Services />
+      </section>
+      <section id="why-us">
+        <WhyChooseUs />
+      </section>
+      <section id="doctors">
+        <Doctors />
+      </section>
+      <section id="appointment">
+        <AppointmentForm />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
       <BackToTop />
     </div>

@@ -65,14 +65,20 @@ const Footer: React.FC = () => {
                 <i className="fas fa-map-marker-alt mt-1 mr-3"></i>
                 <span>Shree Siddhivinayak Ayurveda Panchakarma Center, <br />Flat No. 1, Godavari Complex Shahnurwadi, Sahakar Nagar, <br />New Usmanpura, Chhatrapati Sambhaji Nagar, Maharashtra, 431005 <br />India</span>
               </li>
-              <li className="flex flex-col sm:flex-row items-start gap-2 sm:gap-4">
-  <div className="flex items-center">
-    <i className="fas fa-phone-alt mt-1 mr-3"></i>
-    <span>+91 9967282076</span>
-  </div>
-  <div className="sm:ml-2">+91 9420249387</div>
-  <div className="sm:ml-2">+91 240-7968743</div>
-</li>
+              <li className="flex flex-col items-start gap-2">
+                <div className="flex items-center">
+                  <i className="fas fa-phone-alt mt-1 mr-3"></i>
+                  <span>+91 9967282076</span>
+                </div>
+                <div className="flex items-center">
+                  <i className="fas fa-phone-alt mt-1 mr-3 opacity-0 sm:opacity-0"></i>
+                  <span>+91 9420249387</span>
+                </div>
+                <div className="flex items-center">
+                  <i className="fas fa-phone-alt mt-1 mr-3 opacity-0 sm:opacity-0"></i>
+                  <span>+91 240-7968743</span>
+                </div>
+              </li>
               <li className="flex items-start">
                 <i className="fas fa-envelope mt-1 mr-3"></i>
                 <span>dr.bhairavkulkarni@gmail.com</span>
