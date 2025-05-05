@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import aboutUsImage from '../asstes/aboutus.jpg';
 
 const About: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -85,9 +86,9 @@ const About: React.FC = () => {
               variants={imageVariants}
             >
               <img 
-                src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Ayurvedic treatment center" 
-                className="rounded-3xl shadow-2xl w-full h-[500px] object-cover object-center"
+                src={aboutUsImage} 
+                alt="Shree Siddhivinayak Ayurveda Panchakarma Center" 
+                className="rounded-3xl shadow-2xl w-full h-[700px] object-cover object-center"
               />
             </motion.div>
             
@@ -167,9 +168,9 @@ const About: React.FC = () => {
               variants={imageVariants}
             >
               <img 
-                src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Ayurvedic treatment center" 
-                className="rounded-3xl shadow-2xl w-full h-[500px] object-cover object-center"
+                src={aboutUsImage} 
+                alt="Shree Siddhivinayak Ayurveda Panchakarma Center" 
+                className="rounded-3xl shadow-2xl w-full h-[700px] object-cover object-center"
               />
             </motion.div>
                   

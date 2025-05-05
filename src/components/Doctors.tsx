@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FaAward, FaUserMd, FaBookMedical, FaLinkedin } from 'react-icons/fa';
+import { FaAward, FaUserMd, FaBookMedical, FaLinkedin, FaFileAlt, FaDownload } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import doc1Image from '../asstes/doc1.png';
-import doc2Image from '../asstes/doc2.png';
+import doc1Image from '../asstes/doc1.jpg';
+import doc2Image from '../asstes/doc2.jpg';
+import cv1 from '../asstes/cv/cv1.pdf';
+import cv2 from '../asstes/cv/cv2.pdf';
 
 const Doctors: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -90,6 +92,7 @@ const Doctors: React.FC = () => {
       name: 'Dr. Bhairav Kulkarni',
       specialization: 'Ayurvedic Physician & Panchakarma Specialist',
       image: doc1Image,
+      cv: cv1,
       description: 'Director of Shree Siddhivinayak Ayurveda with 15+ years experience. Specializes in chronic diseases like Diabetes, Osteoarthritis, and Spine disorders. International speaker with 200+ conferences.',
       qualifications: 'BAMS, MD (Kayachikitsa), Ph.D (Scholar)',
       achievements: '33+ research papers, 14 National & 24 International Awards',
@@ -99,6 +102,7 @@ const Doctors: React.FC = () => {
       name: 'Dr. Yashashree Kulkarni',
       specialization: 'Ayurvedic Consultant & Research Specialist',
       image: doc2Image,
+      cv: cv2,
       description: 'Expert in Rognidan with extensive research experience. Published multiple papers on Ayurvedic treatments for osteoporosis and diabetes management.',
       qualifications: 'BAMS, MD (Rognidan)',
       achievements: 'Recipient of Health Excellence Awards',
@@ -272,6 +276,23 @@ const Doctors: React.FC = () => {
                       <p className="text-gray-700 ml-10 border-l-2 border-green-200 pl-4 text-sm">{doctor.research}</p>
                     )}
                   </motion.div>
+                  
+                  {/* CV Download Button */}
+                  <motion.div 
+                    className="mt-6 flex justify-center"
+                    custom={3}
+                    variants={sectionVariants}
+                  >
+                    <a 
+                      href={doctor.cv} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded-lg transition-colors duration-300 shadow-md"
+                    >
+                      <FaFileAlt />
+                      <span>View CV</span>
+                    </a>
+                  </motion.div>
                 </motion.div>
               </motion.div>
             ) : (
@@ -339,6 +360,19 @@ const Doctors: React.FC = () => {
                     {doctor.research && (
                       <p className="text-gray-700 ml-10 border-l-2 border-green-200 pl-4 text-sm">{doctor.research}</p>
                     )}
+                  </div>
+                  
+                  {/* CV Download Button */}
+                  <div className="mt-6 flex justify-center pb-6">
+                    <a 
+                      href={doctor.cv} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded-lg transition-colors duration-300 shadow-md"
+                    >
+                      <FaFileAlt />
+                      <span>View CV</span>
+                    </a>
                   </div>
                 </div>
               </motion.div>

@@ -113,7 +113,7 @@ const Header: React.FC = () => {
       <div className="w-full py-2 flex justify-between items-center transition-all duration-300 ease-in-out">
         {/* Logo */}
         <div className="flex items-center pl-0 md:pl-4 transition-transform duration-300 hover:scale-105">
-          <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-[3.5rem] md:h-[4.5rem] w-auto drop-shadow-sm" />
+          <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-[5.5rem] md:h-[6.5rem] w-auto drop-shadow-sm" />
         </div>
 
         {/* Desktop Links */}
@@ -138,6 +138,15 @@ const Header: React.FC = () => {
               >
                 Our Clinic
                 <span className={`block h-0.5 ${location.pathname === '/hero' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+              </Link>
+              
+              <Link 
+                to="/achievements" 
+                onClick={() => window.scrollTo(0, 0)}
+                className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.pathname === '/achievements' ? 'text-orange-500' : ''}`}
+              >
+                Achievements
+                <span className={`block h-0.5 ${location.pathname === '/achievements' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </Link>
               
               <a href="#why-us" className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${activeSection === 'why-us' ? 'text-orange-500' : ''}`}>
@@ -192,6 +201,15 @@ const Header: React.FC = () => {
               >
                 Our Clinic
                 <span className={`block h-0.5 ${location.pathname === '/hero' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
+              </Link>
+              
+              <Link 
+                to="/achievements" 
+                onClick={() => window.scrollTo(0, 0)}
+                className={`text-green-800 hover:text-orange-500 relative group transition-all duration-300 px-2 py-1 rounded-md hover:bg-green-50 ${location.pathname === '/achievements' ? 'text-orange-500' : ''}`}
+              >
+                Achievements
+                <span className={`block h-0.5 ${location.pathname === '/achievements' ? 'max-w-full' : 'max-w-0'} group-hover:max-w-full bg-orange-500 transition-all duration-500`}></span>
               </Link>
               
               <Link
@@ -299,6 +317,17 @@ const Header: React.FC = () => {
                 <span>Our Clinic</span>
               </Link>
               
+              <Link
+                to="/achievements"
+                onClick={() => {
+                  setMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.pathname === '/achievements' ? 'text-orange-500' : ''}`}
+              >
+                <span>Achievements</span>
+              </Link>
+              
               <a
                 href="#why-us"
                 onClick={() => setMenuOpen(false)}
@@ -365,6 +394,17 @@ const Header: React.FC = () => {
                 className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.pathname === '/hero' ? 'text-orange-500' : ''}`}
               >
                 <span>Our Clinic</span>
+              </Link>
+              
+              <Link 
+                to="/achievements" 
+                onClick={() => {
+                  setMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
+                className={`text-green-800 font-medium hover:text-orange-500 text-base w-full text-center px-6 py-2.5 rounded-md hover:bg-green-50/70 transition-all duration-300 flex items-center justify-center space-x-2 ${location.pathname === '/achievements' ? 'text-orange-500' : ''}`}
+              >
+                <span>Achievements</span>
               </Link>
               
               <Link

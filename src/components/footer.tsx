@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center mb-6">
-              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-16 mr-3" />
+              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-40 mr-3" />
               <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda</span>
             </div>
             <p className="mb-6 opacity-80">
