@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h4 className="font-medium mb-1">Address</h4>
-                      <p>Shree Siddhivinayak Ayurveda Panchakarma Center,<br />Godavari Complex, Flat No. 4, New SBH Colony, Sahakar Nagar <br /> Shahnoorwadi, Chhatrapati Sambhajinagar(Aurangabad)-431005<br />Maharashtra,, India</p>
+                      <p>Shree Siddhivinayak Ayurveda Panchakarma Center,<br /> Flat No. 1, Godavari Complex Shahnurwadi, Sahakar Nagar,<br /> New Usmanpura, Chhatrapati Sambhaji Nagar, Maharashtra, 431005<br /> India</p>
                     </div>
                   </motion.div>
 
@@ -130,7 +130,6 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h4 className="font-medium mb-1">Phone</h4>
-                      <p>+91 240-7968743</p>
                       <p>+91 9967282076</p>
                       <p>+91 9420249387</p>
                     </div>
@@ -237,7 +236,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h4 className="font-medium mb-1">Address</h4>
-                      <p>Shree Siddhivinayak Ayurveda Panchakarma Center,<br /> Flat No. 1, Godavari Complex Shahnurwadi, Sahakar Nagar,<br /> New Usmanpura, Chhatrapati Sambhaji Nagar, Maharashtra, 431005<br /> India</p>
+                      <p>Shree Siddhivinayak Ayurveda Panchakarma Center,<br />Godavari Complex, Flat No. 4, New SBH Colony, Sahakar Nagar <br /> Shahnoorwadi, Chhatrapati Sambhajinagar(Aurangabad)-431005<br />Maharashtra,, India</p>
                     </div>
                   </motion.div>
 
@@ -257,6 +256,7 @@ const Contact: React.FC = () => {
                     </motion.div>
                     <div>
                       <h4 className="font-medium mb-1">Phone</h4>
+                      <p>+91 240-7968743</p>
                       <p>+91 9967282076</p>
                       <p>+91 9420249387</p>
                     </div>
