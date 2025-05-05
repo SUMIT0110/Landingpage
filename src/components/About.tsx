@@ -88,7 +88,7 @@ const About: React.FC = () => {
               <img 
                 src={aboutUsImage} 
                 alt="Shree Siddhivinayak Ayurveda Panchakarma Center" 
-                className="rounded-3xl shadow-2xl w-full h-[700px] object-cover object-center"
+                className="rounded-3xl shadow-2xl w-full h-[400px] md:h-[700px] object-cover object-center"
               />
             </motion.div>
             
@@ -170,7 +170,7 @@ const About: React.FC = () => {
               <img 
                 src={aboutUsImage} 
                 alt="Shree Siddhivinayak Ayurveda Panchakarma Center" 
-                className="rounded-3xl shadow-2xl w-full h-[700px] object-cover object-center"
+                className="rounded-3xl shadow-2xl w-full h-[400px] md:h-[700px] object-cover object-center"
               />
             </motion.div>
                   
