@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-26import bgImage from '../asstes/bg1.avif';
+import bgImage from '../asstes/bg1.avif';
 
 const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
