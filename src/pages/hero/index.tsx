@@ -5,13 +5,13 @@ import Footer from '../../components/footer';
 
 // Import clinic images
 import image1 from '../../asstes/clinik/1.jpg';
-import image2 from '../../asstes/clinik/2.jpg';
-import image3 from '../../asstes/clinik/3.jpg';
-import image4 from '../../asstes/clinik/4.jpg';
-import image5 from '../../asstes/clinik/5.jpg';
-import image6 from '../../asstes/clinik/6.jpg';
-import image7 from '../../asstes/clinik/7.jpg';
-import image8 from '../../asstes/clinik/8.jpg';
+import image2 from '../../asstes/clinik/2.JPG';
+import image3 from '../../asstes/clinik/3.JPG';
+import image4 from '../../asstes/clinik/4.JPG';
+import image5 from '../../asstes/clinik/5.JPG';
+import image6 from '../../asstes/clinik/6.JPG';
+import image7 from '../../asstes/clinik/7.JPG';
+import image8 from '../../asstes/clinik/8.JPG';
 
 const HeroPage: React.FC = () => {
   // Animation variants
