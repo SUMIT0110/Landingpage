@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+26import bgImage from '../asstes/bg1.avif';
 
 const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -62,7 +63,7 @@ const Hero: React.FC = () => {
       id="home"
       className="relative h-screen flex items-center justify-center"
       style={{
-        backgroundImage: `url('/src/asstes/bg1.avif')`,
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
