@@ -64,7 +64,7 @@ const AchievementsPage: React.FC = () => {
             <Header />
 
             {/* Hero Banner */}
-            <section className="relative pt-24 pb-12 bg-gradient-to-r from-green-50 to-green-100">
+            <section className="relative pt-32 pb-12 bg-gradient-to-r from-green-50 to-green-100">
                 <div className="container mx-auto px-6">
                     <motion.div
                         className="text-center max-w-4xl mx-auto"

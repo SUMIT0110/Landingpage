@@ -62,13 +62,13 @@ const Hero: React.FC = () => {
       id="home"
       className="relative h-screen flex items-center justify-center"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/3735149/pexels-photo-3735149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+        backgroundImage: `url('/src/asstes/bg1.avif')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-800/40"></div>
 
       {/* Hero content */}
       <div className="container mx-auto px-6 relative z-10 text-center">

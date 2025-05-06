@@ -113,7 +113,7 @@ const Header: React.FC = () => {
       <div className="w-full py-2 flex justify-between items-center transition-all duration-300 ease-in-out">
         {/* Logo */}
         <div className="flex items-center pl-0 md:pl-4 transition-transform duration-300 hover:scale-105">
-          <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-[5.5rem] md:h-[6.5rem] w-auto drop-shadow-sm" />
+          <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-[5.5rem] md:h-[5rem] w-auto drop-shadow-sm" />
         </div>
 
         {/* Desktop Links */}

@@ -94,7 +94,7 @@ const Doctors: React.FC = () => {
       image: doc1Image,
       cv: cv1,
       description: 'Director of Shree Siddhivinayak Ayurveda with 15+ years experience. Specializes in chronic diseases like Diabetes, Osteoarthritis, and Spine disorders. International speaker with 200+ conferences.',
-      qualifications: 'BAMS, MD (Kayachikitsa), Ph.D (Scholar)',
+      qualifications: 'BAMS, MD (Kayachikitsa), Ph.D ',
       achievements: '33+ research papers, 14 National & 24 International Awards',
       patents: '2 patents in herbal formulations'
     },
