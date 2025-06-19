@@ -89,22 +89,22 @@ const Doctors: React.FC = () => {
 
   const doctors = [
     {
-      name: 'Dr. Bhairav Kulkarni',
+      name: 'Prof. Dr. Bhairav Bhimrao Tawshikar Kulkarni ',
       specialization: 'Ayurvedic Physician & Panchakarma Specialist',
       image: doc1Image,
       cv: cv1,
       description: 'Director of Shree Siddhivinayak Ayurveda with 15+ years experience. Specializes in chronic diseases like Diabetes, Osteoarthritis, and Spine disorders. International speaker with 200+ conferences.',
-      qualifications: 'BAMS, MD (Kayachikitsa), Ph.D ',
+      qualifications: 'BAMS, MD (Kayachikits-Ayurveda) International Ayurveda Physician & Consultant ',
       achievements: '33+ research papers, 14 National & 24 International Awards',
       patents: '2 patents in herbal formulations'
     },
     {
-      name: 'Dr. Yashashree Kulkarni',
+      name: 'Dr. Yashashree Bhairav Kulkarni',
       specialization: 'Ayurvedic Consultant & Research Specialist',
       image: doc2Image,
       cv: cv2,
-      description: 'Expert in Rognidan with extensive research experience. Published multiple papers on Ayurvedic treatments for osteoporosis and diabetes management.',
-      qualifications: 'BAMS, MD (Rognidan)',
+      description: 'Expert in Rognidan with extensive research experience. Published multiple papers on Ayurvedic treatments for osteoporosis and diabetes management & also have experties in Gynaecological disorders',
+      qualifications: 'BAMS, MD(Pathology- Ayurveda) & Expert in Gynaecological disorders',
       achievements: 'Recipient of Health Excellence Awards',
       research: '5+ published research papers in international journals'
     }
