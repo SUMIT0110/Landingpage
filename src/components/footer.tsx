@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logoImage from '../asstes/footerlogo.png';
+import logoImage from '../asstes/logo_marathi.jpg';
 
 const Footer: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center mb-6">
-              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo" className="h-40 mr-3" />
+              <img src={logoImage} alt="Shree Siddhivinayak Ayurveda Logo in Marathi" className="h-24 md:h-40 mr-3" />
               <span className="text-xl font-semibold">Shree Siddhivinayak Ayurveda Panchakarma Center</span>
             </div>
             <p className="mb-6 opacity-80">
