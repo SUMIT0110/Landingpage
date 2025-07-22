@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import bgImage from '../asstes/bg1.avif';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import bgImage from "../asstes/bg1.avif"; // Double-check your import path (typo: 'asstes' vs 'assets')
 
 const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -10,52 +10,50 @@ const Hero: React.FC = () => {
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
-    
+    window.addEventListener("resize", checkIsMobile);
     return () => {
-      window.removeEventListener('resize', checkIsMobile);
+      window.removeEventListener("resize", checkIsMobile);
     };
   }, []);
 
   // Animation variants for text elements
   const titleVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.8,
-        delay: 0.2
-      }
-    }
+        delay: 0.2,
+      },
+    },
   };
 
   const descriptionVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
-        delay: 0.6
-      }
-    }
+        delay: 0.6,
+      },
+    },
   };
 
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 0.5,
         delay: 1.0,
         type: "spring",
-        stiffness: 200
-      }
-    }
+        stiffness: 200,
+      },
+    },
   };
 
   return (
@@ -64,19 +62,19 @@ const Hero: React.FC = () => {
       className="relative h-screen flex items-center justify-center"
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-800/40"></div>
 
-      {/* Hero content */}
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      {/* Hero content with extra top padding */}
+      <div className="container mx-auto px-6 relative z-10 text-center pt-32">
         {isMobile ? (
           // Mobile view with animations
           <>
-            <motion.h1 
+            <motion.h1
               className="text-4xl font-bold text-white mb-6"
               initial="hidden"
               animate="visible"
@@ -84,17 +82,16 @@ const Hero: React.FC = () => {
             >
               Shree Siddhivinayak Ayurveda Panchakarma Center
             </motion.h1>
-            
-            <motion.p 
+            <motion.p
               className="text-xl text-white mb-8 mx-auto"
               initial="hidden"
               animate="visible"
               variants={descriptionVariants}
             >
-              Ayurveda is an ancient healing science that nurtures body, mind, and spirit, promoting balance, vitality, and lifelong wellness.
+              Ayurveda is an ancient healing science that nurtures body, mind,
+              and spirit, promoting balance, vitality, and lifelong wellness.
             </motion.p>
-            
-            <motion.a 
+            <motion.a
               href="#appointment"
               initial="hidden"
               animate="visible"
@@ -109,7 +106,7 @@ const Hero: React.FC = () => {
         ) : (
           // Desktop view with animations
           <>
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl font-bold text-white mb-6"
               initial="hidden"
               animate="visible"
@@ -117,17 +114,16 @@ const Hero: React.FC = () => {
             >
               Shree Siddhivinayak Ayurveda Panchakarma Center
             </motion.h1>
-            
-            <motion.p 
+            <motion.p
               className="text-xl text-white mb-8 max-w-2xl mx-auto"
               initial="hidden"
               animate="visible"
               variants={descriptionVariants}
             >
-              Ayurveda is an ancient healing science that nurtures body, mind, and spirit, promoting balance, vitality, and lifelong wellness.
+              Ayurveda is an ancient healing science that nurtures body, mind,
+              and spirit, promoting balance, vitality, and lifelong wellness.
             </motion.p>
-            
-            <motion.a 
+            <motion.a
               href="#appointment"
               initial="hidden"
               animate="visible"
